@@ -20,19 +20,15 @@ import java.util.Locale;
 @Mixin(Keyboard.class)
 public abstract class KeyboardMixin {
     @Shadow @Final private MinecraftClient client;
-
     @Shadow protected abstract void debugLog(String key, Object... args);
-
     @Shadow public abstract void setClipboard(String clipboard);
-
     @Shadow protected abstract void copyLookAt(boolean hasQueryPermission, boolean queryServer);
-
     @Shadow private long debugCrashStartTime;
-
     @Shadow protected abstract void debugLog(Text text);
 
     /**
      * @author Wurgo
+     * @reason .
      */
     @Overwrite
     private boolean processF3(int key) {
@@ -91,12 +87,12 @@ public abstract class KeyboardMixin {
                     if (this.client.player != null && !this.client.player.hasPermissionLevel(2)) {
                         this.debugLog("debug.creative_spectator.error");
                     } else if (!this.client.player.isSpectator()) {
-                        this.client.player.sendChatMessage("/gamemode spectator");
+                        this.client.player.sendCommand("gamemode spectator", null);
                     } else {
                         if (this.client.interactionManager != null) {
                             GameMode previousGameMode = this.client.interactionManager.getPreviousGameMode();
                             if (previousGameMode != null) {
-                                this.client.player.sendChatMessage("/gamemode " + this.client.interactionManager.getPreviousGameMode().getName());
+                                this.client.player.sendCommand("gamemode " + this.client.interactionManager.getPreviousGameMode().getName(), null);
                             }
                         }
                     }

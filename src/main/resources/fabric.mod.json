@@ -13,6 +13,6 @@
   "environment": "client",
   "mixins": ["olddebug.mixins.json"],
   "depends": {
-    "minecraft": "1.19"
+    "minecraft": ">=1.19 1.19.x"
   }
 }
