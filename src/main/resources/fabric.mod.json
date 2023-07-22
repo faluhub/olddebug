@@ -3,16 +3,16 @@
   "id": "olddebug",
   "version": "${version}",
   "name": "OldDebug",
-  "description": "Old debug",
-  "authors": ["Wurgo"],
+  "description": "Old debug keybinds.",
+  "authors": ["Falu"],
   "contact": {
-    "homepage": "https://github.com/wurgo"
+    "homepage": "https://github.com/faluhub"
   },
   "license": "MIT",
   "icon": "assets/olddebug/icon.png",
   "environment": "client",
   "mixins": ["olddebug.mixins.json"],
   "depends": {
-    "minecraft": ">=1.19 1.19.x"
+    "minecraft": ">1.18.2"
   }
 }
